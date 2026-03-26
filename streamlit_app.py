@@ -2,7 +2,7 @@
 import streamlit as st
 #本项目使用新版langchain
 from langchain_openai import ChatOpenAI
-from langchain_community.memory import ConversationBufferMemory
+from langchain_core.memory import ConversationBufferMemory
 from langchain_core.prompts import ChatPromptTemplate,MessagesPlaceholder
 #进行前端网页设计
 st.title("经济学人伴读助手")
