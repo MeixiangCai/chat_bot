@@ -1,6 +1,5 @@
 streamlit
 langchain
 langchain-openai
-langchain.chains
 openai
 pydantic
