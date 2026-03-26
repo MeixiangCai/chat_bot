@@ -1,5 +1,4 @@
 streamlit
-langchain
-langchain-openai
-openai
-pydantic
+langchain==0.0.354
+langchain-openai==0.0.10
+openai==1.7.0
