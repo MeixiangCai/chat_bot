@@ -1,6 +1,6 @@
 #项目目标是创作一个帮助学习的对话机器人
 import streamlit as st
-from langchain.chains import ConversationChain #本项目使用旧版langchain
+from langchain.chains.conversation import ConversationChain #本项目使用旧版langchain
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import ChatPromptTemplate,MessagesPlaceholder
