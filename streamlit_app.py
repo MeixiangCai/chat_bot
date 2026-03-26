@@ -1,9 +1,9 @@
 #项目目标是创作一个帮助学习的对话机器人
 import streamlit as st
-from langchain.chains.conversation import ConversationChain #本项目使用旧版langchain
+#本项目使用新版langchain
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
-from langchain.prompts import ChatPromptTemplate,MessagesPlaceholder
+from langchain_core.prompts import ChatPromptTemplate,MessagesPlaceholder
 #进行前端网页设计
 st.title("经济学人伴读助手")
 with st.sidebar:
@@ -58,13 +58,10 @@ def generate_response(user_input,subject,style,memory):
         temperature=1.3,
     )
     prompt=get_prompt_template(subject,style)
-    chain=ConversationChain(
-        llm=client,
-        memory=memory,
-        prompt=prompt,
-    )
-    response=chain.invoke({"input":user_input})
-    return response["response"]
+    chain=prompt | llm
+        
+    response=chain.invoke({"input":user_input,"chat_history": memory.chat_memory.messages})
+    return response.content
 #如果已有用户输入
 if user_input:
     st.chat_message("human").write(user_input)
