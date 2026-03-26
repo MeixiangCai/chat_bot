@@ -1,5 +1,4 @@
-streamlit>=1.35.0
-langchain==0.0.320  # 这个版本100%有langchain.chains
+streamlit==1.32.0
+langchain==0.0.354
 langchain-openai==0.0.10
 openai==1.7.0
-pydantic==2.0.0
