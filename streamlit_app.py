@@ -58,7 +58,7 @@ def generate_response(user_input,subject,style,memory):
         temperature=1.3,
     )
     prompt=get_prompt_template(subject,style)
-    chain=prompt | llm
+    chain=prompt | client
         
     response=chain.invoke({"input":user_input,"chat_history": memory.chat_memory.messages})
     return response.content
